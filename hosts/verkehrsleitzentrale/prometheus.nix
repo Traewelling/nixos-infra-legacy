@@ -19,6 +19,26 @@
         ];
       }
       {
+        job_name = "loki";
+        static_configs = [
+          {
+            targets = [
+              "localhost:3030"
+            ];
+          }
+        ];
+      }
+      {
+        job_name = "promtail";
+        static_configs = [
+          {
+            targets = [
+              "10.100.0.2:9080"
+            ];
+          }
+        ];
+      }
+      {
         job_name = "node";
         static_configs = [
           {
