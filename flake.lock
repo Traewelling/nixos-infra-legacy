@@ -28,11 +28,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1664454391,
-        "narHash": "sha256-gGzCW9e9DqeS+gA61ESOIN7v3/lCk9WaVDY8zG1cUXs=",
+        "lastModified": 1664722042,
+        "narHash": "sha256-8aAIT1YwM+atKG83bNxSaHJCI8N9BdArRn7m3BHdmhU=",
         "ref": "refs/heads/main",
-        "rev": "5bcda109e35b42d07f7a6f2fca1e9d9f90128230",
-        "revCount": 277,
+        "rev": "4d4d13c9a51b8f2f232116c70a7c2a5424eae1ba",
+        "revCount": 279,
         "type": "git",
         "url": "https://git.xanderio.de/xanderio/deploy-rs"
       },
@@ -58,11 +58,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1664370076,
-        "narHash": "sha256-NDnIo0nxJozLwEw0VPM+RApMA90uTfbvaNNtC5eB7Os=",
+        "lastModified": 1664538465,
+        "narHash": "sha256-EnlC7dDKX7X1wlnXkB1gmn9rBZQ0J9+biVTZHw//8us=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "854fdc68881791812eddd33b2fed94b954979a8e",
+        "rev": "10ecda252ce1b3b1d6403caeadbcc8f30d5ab796",
         "type": "github"
       },
       "original": {
