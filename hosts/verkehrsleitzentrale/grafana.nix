@@ -6,14 +6,15 @@
   services = {
     grafana = {
       enable = true;
-      domain = "monitoring.traewelling.de";
       rootUrl = "https://monitoring.traewelling.de";
-      security.adminPasswordFile = config.age.secrets."grafana-admin".path;
+      settings = {
+        server.domain = "monitoring.traewelling.de";
+      };
     };
 
     nginx = {
       enable = true;
-      virtualHosts.${config.services.grafana.domain} = {
+      virtualHosts.${config.services.grafana.settings.server.domain} = {
         enableACME = true;
         forceSSL = true;
         locations."/" = {
