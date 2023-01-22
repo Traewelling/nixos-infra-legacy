@@ -28,17 +28,17 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1664722042,
-        "narHash": "sha256-8aAIT1YwM+atKG83bNxSaHJCI8N9BdArRn7m3BHdmhU=",
-        "ref": "refs/heads/main",
-        "rev": "4d4d13c9a51b8f2f232116c70a7c2a5424eae1ba",
-        "revCount": 279,
-        "type": "git",
-        "url": "https://git.xanderio.de/xanderio/deploy-rs"
+        "lastModified": 1668841484,
+        "narHash": "sha256-fiDqpfcO16bvTxkIRkTsnQLxbpZumxIHnRNFWsTU5jM=",
+        "owner": "xanderio",
+        "repo": "deploy-rs",
+        "rev": "a17d5256e0082eef75ed46147ea571c20bded8b5",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.xanderio.de/xanderio/deploy-rs"
+        "owner": "xanderio",
+        "repo": "deploy-rs",
+        "type": "github"
       }
     },
     "flake-utils": {
