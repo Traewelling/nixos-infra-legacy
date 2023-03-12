@@ -3,7 +3,7 @@ let
   sharedModules = [
     ../modules/minimal.nix
     { _module.args = { inherit inputs; }; }
-    inputs.agenix.nixosModule
+    inputs.agenix.nixosModules.default
   ];
 
   inherit (inputs.nixpkgs.lib) nixosSystem;
