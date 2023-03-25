@@ -21,6 +21,10 @@
           proxyPass = "http://localhost:${toString config.services.grafana.port}";
           proxyWebsockets = true;
         };
+
+        locations."/metrics" = {
+          return = "403";
+        };
       };
     };
   };
