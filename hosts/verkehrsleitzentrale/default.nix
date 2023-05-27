@@ -46,6 +46,11 @@
         }
       ];
     };
+
+    hosts = {
+      "10.100.0.1" = [ "verkehrsleitzentrale.local" ];
+      "10.100.0.2" = [ "maglev.local" ];
+    };
   };
   age.secrets."verkehrsleitzentrale-priv".file = ../../secrets/verkehrsleitzentrale-priv.age;
 }

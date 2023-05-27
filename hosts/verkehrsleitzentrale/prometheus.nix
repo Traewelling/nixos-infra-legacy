@@ -1,7 +1,4 @@
-{ pkgs
-, config
-, ...
-}: {
+{ config, ... }: {
   services.prometheus = {
     enable = true;
     enableReload = true;
@@ -13,7 +10,7 @@
         static_configs = [
           {
             targets = [
-              "localhost:${toString config.services.prometheus.port}"
+              "verkehrsleitzentrale.local:${toString config.services.prometheus.port}"
             ];
           }
         ];
@@ -23,8 +20,16 @@
         static_configs = [
           {
             targets = [
-              "localhost:3030"
+              "verkehrsleitzentrale.local:3030"
             ];
+          }
+        ];
+        relabel_configs = [
+          {
+            source_labels = [ "__address__" ];
+            target_label = "instance";
+            regex = "(.*):3030";
+            replacement = "$1";
           }
         ];
       }
@@ -33,8 +38,34 @@
         static_configs = [
           {
             targets = [
-              "10.100.0.2:9080"
+              "maglev.local:9080"
             ];
+          }
+        ];
+        relabel_configs = [
+          {
+            source_labels = [ "__address__" ];
+            target_label = "instance";
+            regex = "(.*):9080";
+            replacement = "$1";
+          }
+        ];
+      }
+      {
+        job_name = "mysql";
+        static_configs = [
+          {
+            targets = [
+              "maglev.local:9104"
+            ];
+          }
+        ];
+        relabel_configs = [
+          {
+            source_labels = [ "__address__" ];
+            target_label = "instance";
+            regex = "(.*):9104";
+            replacement = "$1";
           }
         ];
       }
@@ -43,8 +74,8 @@
         static_configs = [
           {
             targets = [
-              "localhost:${toString config.services.prometheus.exporters.node.port}"
-              "10.100.0.2:${toString config.services.prometheus.exporters.node.port}"
+              "verkehrsleitzentrale.local:${toString config.services.prometheus.exporters.node.port}"
+              "maglev.local:${toString config.services.prometheus.exporters.node.port}"
             ];
           }
         ];
@@ -52,14 +83,8 @@
           {
             source_labels = [ "__address__" ];
             target_label = "instance";
-            regex = "10.100.0.2:9100";
-            replacement = "maglev";
-          }
-          {
-            source_labels = [ "__address__" ];
-            target_label = "instance";
-            regex = "localhost:9100";
-            replacement = "verkehrsleitzentrale";
+            regex = "(.*):9100";
+            replacement = "$1";
           }
         ];
       }
